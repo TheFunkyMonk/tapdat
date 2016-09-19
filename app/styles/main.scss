@@ -21,14 +21,26 @@ body {
 }
 
 .tap {
-  border-right: 1px solid $lilac;
   box-sizing: border-box;
   float: left;
   height: 100vh;
-  padding: 1em;
+  overflow: hidden;
   width: 25%;
 
   &:nth-child(4) {
     border-right: none;
   }
+}
+
+.hero {
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+}
+
+.details {
+  border-right: 1px solid $lilac;
+  padding: 1em;
 }
