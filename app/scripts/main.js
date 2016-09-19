@@ -13,6 +13,7 @@ client.getEntries()
     entries.items.forEach(function (entry) {
       context.taps.push(entry);
     })
+    console.table(context);
     renderView();
   });
 
