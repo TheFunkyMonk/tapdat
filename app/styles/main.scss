@@ -1,6 +1,11 @@
 @import 'lib/normalize';
 @import 'vars';
 
+::selection {
+  background: $green;
+  color: $white;
+}
+
 body {
   background: $white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -25,6 +30,7 @@ body {
   float: left;
   height: 100vh;
   overflow: hidden;
+  text-align: center;
   width: 25%;
 
   &:nth-child(4) {
