@@ -8,13 +8,15 @@
 
 tapdat is a digital tap list application, powered by [Contentful](https://www.contentful.com).
 
-## Task Management
-See the [Trello board](https://trello.com/b/cbClnWYD/tapdat) for current design and development tasks.
-
 ## Features
 * Built on top of the [Yeoman Webapp Generator](https://github.com/yeoman/generator-webapp)
 * Includes Gulp / Sass / Handlebars
 * Built to consume [Contentful](https://www.contentful.com) APIs
+
+## Development
+See the [Trello board](https://trello.com/b/cbClnWYD/tapdat) for current design and development tasks.
+
+Periodic builds will be deployed to [tapdat.rjlacount.com](http://tapdat.rjlacount.com).
 
 ## Installation
 
