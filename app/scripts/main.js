@@ -7,12 +7,29 @@ var context = {
   taps: []
 };
 
-client.getEntries()
+function sortByTapNumber(items) {
+  items.sort(function (a, b) {
+    if (a.fields.tap > b.fields.tap) {
+      return 1;
+    }
+    if (a.fields.tap < b.fields.tap) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+};
+
+client.getEntries({
+  'content_type': 'beer',
+  'fields.onTap': true
+})
   .then(function (entries) {
     // Log entry for each published entry
     entries.items.forEach(function (entry) {
       context.taps.push(entry);
     })
+    sortByTapNumber(context.taps);
     console.table(context);
     renderView();
   });

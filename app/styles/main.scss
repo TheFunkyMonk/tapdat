@@ -15,7 +15,7 @@ body {
   color: $black;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, span {
   font-family: $bebas-neue;
   font-weight: $regular;
 }
@@ -99,13 +99,26 @@ p {
 .title-card {
   background: $white;
   left: 5%;
-  overflow: hidden;
   padding: 0.75em 0 1em;
   position: absolute;
   top: 0;
   transform: translateY(-100%);
   width: 90%;
   white-space: nowrap;
+}
+
+.tap-number {
+  background: $orange;
+  border-radius: 50%;
+  color: $white;
+  height: 2em;
+  position: absolute;
+  top: -1em;
+  left: calc(50% - 1em);
+  line-height: 2.2;
+  text-align: center;
+  width: 2em;
+  z-index: 1;
 }
 
 .style {
