@@ -7,9 +7,18 @@
     <title>tapdat</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
 
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -18,13 +27,18 @@
 
     <div id="content"></div>
 
-    <!-- Libs -->
-    <script src="https://unpkg.com/contentful@latest/browser-dist/contentful.min.js"></script>
-    <script src="bower_components/handlebars/handlebars.runtime.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
 
-    <!-- Scripts -->
+    <script src="https://unpkg.com/contentful@latest/browser-dist/contentful.min.js"></script>
+
+    <!-- build:js scripts/main.js -->
+    <script src="bower_components/handlebars/handlebars.runtime.js"></script>
     <script src="templates/main.js"></script>
     <script src="scripts/config.js"></script>
     <script src="scripts/main.js"></script>
+    <!-- endbuild -->
   </body>
 </html>
