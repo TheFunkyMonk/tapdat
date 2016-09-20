@@ -1,0 +1,19 @@
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$file-path}.woff') format('woff'),
+    url('#{$file-path}.woff2') format('woff2');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@include font-face(Open Sans, '../fonts/opensans-regular', 400, normal);
+@include font-face(Bebas Neue, '../fonts/bebasneue-regular', 400, normal);
+@include font-face(Bebas Neue, '../fonts/bebasneue-bold', 400, normal);
+
+$open-sans: 'Open Sans', Arial, sans-serif;
+$bebas-neue: 'Bebas Neue', Arial, sans-serif;
+
+$regular: 400;
+$bold: 700;
