@@ -21,12 +21,15 @@ h1, h2, h3, h4, h5 {
 }
 
 h2 {
+  color: $orange;
   font-size: 2em;
   font-weight: $bold;
+  margin-bottom: 0;
 }
 
 h3, h4, h5 {
   font-size: 0.875em;
+  letter-spacing: 1px;
 }
 
 p {
@@ -54,8 +57,25 @@ p {
   text-align: center;
   width: 25%;
 
-  &:nth-child(4) {
-    border-right: none;
+  .details {
+    height: 100%;
+    position: relative;
+
+    .inner-content {
+      border-left: 1px solid $lilac;
+      height: 100%;
+      padding: 3em 1em 1em;
+    }
+  }
+
+  &:first-child {
+
+    .details {
+
+      .inner-content {
+        border-left: none;
+      }
+    }
   }
 }
 
@@ -67,8 +87,25 @@ p {
   width: 100%;
 }
 
-.details {
-  border-right: 1px solid $lilac;
-  height: 100%;
-  padding: 1em;
+.title-card {
+  background: $white;
+  left: 5%;
+  overflow: hidden;
+  padding: 0.75em 0 1em;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  width: 90%;
+  white-space: nowrap;
+}
+
+.style {
+  background: linear-gradient(90deg, $gd-dk-green, $gd-lt-green);
+  color: $white;
+  left: 0;
+  margin: 0;
+  padding: 1.1em 0 0.9em;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
