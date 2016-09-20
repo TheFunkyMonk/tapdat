@@ -34,7 +34,7 @@ h3, h4 {
 
 p {
   font-size: 0.75em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 .content {
@@ -75,6 +75,10 @@ p {
       height: 100%;
       padding: 3em 1em 1em;
     }
+
+    .description {
+      height: 20%;
+    }
   }
 
   &:first-child {
@@ -92,7 +96,7 @@ p {
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 45vh;
   width: 100%;
 }
 
@@ -130,4 +134,21 @@ p {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.rating {
+
+  &:last-of-type {
+    margin-bottom: 1em;
+  }
+
+  h4 {
+    display: inline-block;
+    margin: 0 1em 1em 0;
+  }
+
+  p {
+    display: inline-block;
+    margin-bottom: 0;
+  }
 }
