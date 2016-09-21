@@ -3,23 +3,23 @@
 .accentRed {
 
   h2 { color: $red; }
-  .tap-number, .style { background: $red; }
+  .tap-number, .style, .description:before { background: $red; }
 }
 
 .accentBlue {
 
   h2 { color: $blue; }
-  .tap-number, .style { background: $blue; }
+  .tap-number, .style, .description:before { background: $blue; }
 }
 
 .accentGreen {
 
   h2 { color: $green; }
-  .tap-number, .style { background: $green; }
+  .tap-number, .style, .description:before { background: $green; }
 }
 
 .accentOrange {
 
   h2 { color: $orange; }
-  .tap-number, .style { background: $orange; }
+  .tap-number, .style, .description:before { background: $orange; }
 }

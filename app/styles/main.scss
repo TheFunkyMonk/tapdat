@@ -85,7 +85,6 @@ p {
     .inner-content {
       border-left: 1px solid $lilac;
       height: 100%;
-      padding: 3em 2em 1em;
 
       @media (min-width: $xx-large) {
         padding: 4em 3em 1em;
@@ -93,7 +92,21 @@ p {
     }
 
     .description {
-      height: 32%;
+      height: 30%;
+      margin-bottom: 2em;
+      padding: 3.5em 2em 0;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0.05;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
     }
   }
 
@@ -174,7 +187,7 @@ p {
   h4 {
     display: inline-block;
     margin: 0 1em 1.5em 0;
-    padding-top: .4em;
+    padding-top: .6em;
     vertical-align: top;
   }
 
@@ -189,9 +202,9 @@ p {
     span {
       background-position: center 0;
       background-repeat: no-repeat;
-      background-size: 20px 20px;
+      background-size: 25px 25px;
       display: inline-block;
-      height: 20px;
+      height: 25px;
       width: 25px;
     }
 
@@ -212,8 +225,8 @@ p {
 
       span {
         background-image: url('../images/malt-off.svg');
-        background-size: 25px 25px;
-        height: 25px;
+        background-size: 30px 30px;
+        height: 30px;
       }
 
       &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/malt-on.svg'); }}
@@ -230,5 +243,11 @@ p {
   h4, p {
     display: inline-block;
     margin-top: 0;
+    padding-top: .6em;
   }
+}
+
+.rating,
+.notes {
+  padding: 0 2em;
 }
