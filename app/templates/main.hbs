@@ -10,19 +10,25 @@
       <h4 class="style">{{fields.style}}</h4>
       <div class="inner-content">
         <div class="description">
-          <h4>{{fields.subtitle}}</h4>
+          <h4 class="subtitle">{{fields.subtitle}}</h4>
           <p>{{fields.description}}</p>
         </div>
         <div class="rating">
-          <h4>Hops</h4>
-          <p>{{fields.hoppiness}} / 5</p>
+          <h4>Hops:</h4>
+          <div class="icons hops on-{{fields.hoppiness}}">
+            {{#times 5}} <span></span> {{/times}}
+          </div>
         </div>
         <div class="rating">
-          <h4>Malt</h4>
-          <p>{{fields.maltiness}} / 5</p>
+          <h4>Malt:</h4>
+          <div class="icons malt on-{{fields.maltiness}}">
+            {{#times 5}} <span></span> {{/times}}
+          </div>
         </div>
-        <h4>Tasting Notes</h4>
-        <p>{{fields.tastingNotes}}</p>
+        <div class="notes">
+          <h4>Notes:</h4>
+          <p>{{fields.tastingNotes}}</p>
+        </div>
       </div>
     </div>
   </div>

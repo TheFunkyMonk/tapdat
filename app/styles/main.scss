@@ -62,7 +62,6 @@ p {
   float: left;
   height: 100vh;
   overflow: hidden;
-  text-align: center;
   width: 100%;
 
   @media (min-width: $small) {
@@ -88,7 +87,7 @@ p {
     }
 
     .description {
-      height: 20%;
+      height: 25%;
     }
   }
 
@@ -116,6 +115,7 @@ p {
   left: 5%;
   padding: 0.75em 0 1em;
   position: absolute;
+  text-align: center;
   top: 0;
   transform: translateY(-99%);
   width: 90%;
@@ -143,8 +143,16 @@ p {
   margin: 0;
   padding: 1.1em 0 0.9em;
   position: absolute;
+  text-align: center;
   top: 0;
   width: 100%;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: $open-sans;
+  font-size: 1em;
+  font-weight: $regular;
 }
 
 .rating {
@@ -155,11 +163,65 @@ p {
 
   h4 {
     display: inline-block;
-    margin: 0 1em 1em 0;
+    margin: 0 1em 1.5em 0;
+    padding-top: .4em;
+    vertical-align: top;
   }
 
   p {
     display: inline-block;
     margin-bottom: 0;
+  }
+
+  .icons {
+    display: inline-block;
+
+    span {
+      background-position: center 0;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      display: inline-block;
+      height: 20px;
+      width: 25px;
+    }
+
+    &.hops {
+
+      span {
+        background-image: url('../images/hop-off.svg');
+      }
+
+      &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/hop-on.svg'); }}
+      &.on-2 { span:nth-child(-n + 2) { background-image: url('../images/hop-on.svg'); }}
+      &.on-3 { span:nth-child(-n + 3) { background-image: url('../images/hop-on.svg'); }}
+      &.on-4 { span:nth-child(-n + 4) { background-image: url('../images/hop-on.svg'); }}
+      &.on-5 { span:nth-child(-n + 5) { background-image: url('../images/hop-on.svg'); }}
+    }
+
+    &.malt {
+
+      span {
+        background-image: url('../images/malt-off.svg');
+        background-size: 25px 25px;
+        height: 25px;
+      }
+
+      &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/malt-on.svg'); }}
+      &.on-2 { span:nth-child(-n + 2) { background-image: url('../images/malt-on.svg'); }}
+      &.on-3 { span:nth-child(-n + 3) { background-image: url('../images/malt-on.svg'); }}
+      &.on-4 { span:nth-child(-n + 4) { background-image: url('../images/malt-on.svg'); }}
+      &.on-5 { span:nth-child(-n + 5) { background-image: url('../images/malt-on.svg'); }}
+    }
+  }
+}
+
+.notes {
+
+  h4, p {
+    display: inline-block;
+  }
+
+  h4 {
+    margin-top: 0;
   }
 }
