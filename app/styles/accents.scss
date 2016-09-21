@@ -1,0 +1,25 @@
+@import 'vars';
+
+.accentRed {
+
+  h2 { color: $red; }
+  .tap-number, .style { background: $red; }
+}
+
+.accentBlue {
+
+  h2 { color: $blue; }
+  .tap-number, .style { background: $blue; }
+}
+
+.accentGreen {
+
+  h2 { color: $green; }
+  .tap-number, .style { background: $green; }
+}
+
+.accentOrange {
+
+  h2 { color: $orange; }
+  .tap-number, .style { background: $orange; }
+}

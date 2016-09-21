@@ -9,11 +9,13 @@
 }
 
 @include font-face(Open Sans, '../fonts/opensans-regular', 400, normal);
+@include font-face(Open Sans, '../fonts/opensans-semibold', 600, normal);
 @include font-face(Bebas Neue, '../fonts/bebasneue-regular', 400, normal);
-@include font-face(Bebas Neue, '../fonts/bebasneue-bold', 400, normal);
+@include font-face(Bebas Neue, '../fonts/bebasneue-bold', 700, normal);
 
 $open-sans: 'Open Sans', Arial, sans-serif;
 $bebas-neue: 'Bebas Neue', Arial, sans-serif;
 
 $regular: 400;
+$semibold: 600;
 $bold: 700;

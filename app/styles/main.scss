@@ -1,6 +1,7 @@
 @import 'lib/normalize';
 @import 'fonts';
 @import 'vars';
+@import 'accents';
 
 ::selection {
   background: $black;
@@ -24,23 +25,28 @@ h1, h2, h3, h4, span, p {
 
 h1, h2, h3, h4, span {
   font-family: $bebas-neue;
-  font-weight: $regular;
+  font-weight: $bold;
 }
 
 h2 {
   color: $orange;
-  font-size: 2em;
+  font-size: 2.25em;
   font-weight: $bold;
   margin-bottom: 0;
 }
 
 h3, h4 {
-  font-size: 0.875em;
+  font-size: 1em;
   letter-spacing: 1px;
 }
 
+h3 {
+  color: $dk-gray;
+  margin-top: 0;
+}
+
 p {
-  font-size: 0.75em;
+  font-size: 0.85em;
   margin-bottom: 2em;
 }
 
@@ -79,7 +85,7 @@ p {
     .inner-content {
       border-left: 1px solid $lilac;
       height: 100%;
-      padding: 3em 1em 1em;
+      padding: 3em 2em 1em;
 
       @media (min-width: $xx-large) {
         padding: 4em 3em 1em;
@@ -87,7 +93,7 @@ p {
     }
 
     .description {
-      height: 25%;
+      height: 32%;
     }
   }
 
@@ -106,7 +112,7 @@ p {
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 45vh;
+  height: 40vh;
   width: 100%;
 }
 
@@ -124,24 +130,27 @@ p {
 
 .tap-number {
   background: $orange;
+  border: 4px solid $white;
   border-radius: 50%;
   color: $white;
-  height: 2em;
+  font-size: 1.75em;
+  height: 1.5em;
   position: absolute;
   top: -1em;
   left: calc(50% - 1em);
-  line-height: 2.2;
+  line-height: 2;
   text-align: center;
-  width: 2em;
+  width: 1.5em;
   z-index: 1;
 }
 
 .style {
-  background: linear-gradient(90deg, $gd-dk-green, $gd-lt-green);
+  background: $orange;
   color: $white;
+  font-size: 2em;
   left: 0;
   margin: 0;
-  padding: 1.1em 0 0.9em;
+  padding: 0.5em 0 0;
   position: absolute;
   text-align: center;
   top: 0;
@@ -152,7 +161,8 @@ p {
   text-align: center;
   font-family: $open-sans;
   font-size: 1em;
-  font-weight: $regular;
+  font-weight: $semibold;
+  letter-spacing: 0;
 }
 
 .rating {
@@ -219,9 +229,6 @@ p {
 
   h4, p {
     display: inline-block;
-  }
-
-  h4 {
     margin-top: 0;
   }
 }
