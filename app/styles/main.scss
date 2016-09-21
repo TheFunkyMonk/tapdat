@@ -3,6 +3,19 @@
 @import 'vars';
 @import 'accents';
 
+.cf {
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
 ::selection {
   background: $black;
   color: $white;
@@ -42,25 +55,12 @@ h3, h4 {
 
 h3 {
   color: $dk-gray;
-  margin-top: 0;
+  margin: 0 0 0.5em;
 }
 
 p {
   font-size: 0.85em;
   margin-bottom: 2em;
-}
-
-.content {
-
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-
-  &:after {
-    clear: both;
-  }
 }
 
 .tap {
@@ -85,10 +85,6 @@ p {
     .inner-content {
       border-left: 1px solid $lilac;
       height: 100%;
-
-      @media (min-width: $xx-large) {
-        padding: 4em 3em 1em;
-      }
     }
 
     .description {
@@ -96,6 +92,10 @@ p {
       margin-bottom: 2em;
       padding: 3.5em 2em 0;
       position: relative;
+
+      @media (min-width: $xx-large) {
+        padding: 4em 3em 1em;
+      }
 
       &:before {
         content: '';
@@ -185,19 +185,26 @@ p {
   }
 
   h4 {
-    display: inline-block;
-    margin: 0 1em 1.5em 0;
+    display: block;
+    float: left;
+    margin: 0 0 1.25em 0;
     padding-top: .6em;
     vertical-align: top;
+    width: 25%;
   }
 
   p {
-    display: inline-block;
+    display: block;
+    float: right;
     margin-bottom: 0;
+    width: 75%;
   }
 
   .icons {
-    display: inline-block;
+    display: block;
+    float: right;
+    width: 75%;
+
 
     span {
       background-position: center 0;
@@ -205,7 +212,12 @@ p {
       background-size: 25px 25px;
       display: inline-block;
       height: 25px;
+      margin-right: 8%;
       width: 25px;
+
+      @media (min-width: $small) {
+        margin-right: 5%;
+      }
     }
 
     &.hops {
@@ -245,9 +257,15 @@ p {
     margin-top: 0;
     padding-top: .6em;
   }
+
+  p {
+    display: block;
+    float: right;
+    width: 75%;
+  }
 }
 
 .rating,
 .notes {
-  padding: 0 2em;
+  padding: 0 0 0 2em;
 }
