@@ -257,8 +257,8 @@ p {
 
       span {
         background-image: url('../images/malt-off.svg');
-        background-size: 30px 30px;
-        height: 30px;
+        background-size: 32px 32px;
+        height: 32px;
       }
 
       &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/malt-on.svg'); }}
