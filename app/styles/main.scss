@@ -91,6 +91,7 @@ p {
       font-style: italic;
       height: 30%;
       margin-bottom: 2em;
+      overflow: hidden;
       padding: 3.5em 2em 0;
       position: relative;
 
@@ -98,12 +99,15 @@ p {
         padding: 4em 3em 1em;
       }
 
+      h4, p {
+        position: relative;
+        z-index: 2;
+      }
+
       p {
         font-size: 0.75em;
         font-weight: $semibold;
         line-height: 1.75;
-        position: relative;
-        z-index: 2;
       }
     }
 
@@ -187,7 +191,7 @@ p {
   text-align: center;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .subtitle {
