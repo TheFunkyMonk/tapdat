@@ -1,0 +1,20 @@
+<svg width="35px" height="32px" viewBox="-4 -3 35 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="61.2901355%" y1="54.0835797%" x2="51.3523326%" y2="7.50911368%" id="linearGradient-1">
+            <stop stop-color="#673A00" offset="0%"></stop>
+            <stop stop-color="#A06C00" offset="25.0689736%"></stop>
+            <stop stop-color="#663A00" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="57.4389133%" y1="50%" x2="51.3523326%" y2="7.50911368%" id="linearGradient-2">
+            <stop stop-color="#673A00" offset="0%"></stop>
+            <stop stop-color="#A06C00" offset="97.1504282%"></stop>
+            <stop stop-color="#663A00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Group-15" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(13.608413, 13.003314) rotate(342.000000) translate(-13.608413, -13.003314) translate(0.608413, 2.503314)" stroke-linecap="round" stroke-linejoin="bevel">
+        <path d="M24.9981592,9.3645798 C25.3537505,10.345826 23.7655382,13.6994618 13.8591175,15.3562223 C3.95269673,17.0129828 2.88745137,21.7749217 2.62585303,19.9702347 C0.824685622,7.54453089 20.4952407,2.73753778 24.9981592,9.3645798 Z" id="Path-2" stroke="#000000" stroke-width="2" fill="url(#linearGradient-1)" transform="translate(13.776297, 13.377838) rotate(-180.000000) translate(-13.776297, -13.377838) "></path>
+        <path d="M22.8308302,2.96206296 C23.2033653,3.90863582 20.5155081,7.10132525 10.5202759,8.69080388 C0.525043617,10.2802825 0.713751169,15.5680366 0.439687778,13.8271201 C-1.44730448,1.84049149 18.1133496,-3.4308056 22.8308302,2.96206296 Z" id="Path-2" stroke="#000000" stroke-width="2" fill="url(#linearGradient-2)"></path>
+    </g>
+</svg>
