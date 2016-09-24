@@ -14,6 +14,14 @@ Handlebars.registerHelper('times', function(n, block) {
   return accum;
 });
 
+function formatAbv(entry) {
+  if (entry.fields.abv < 10) {
+    entry.fields.abv = entry.fields.abv.toFixed(1);
+  } else {
+    entry.fields.abv = Math.round(entry.fields.abv);
+  }
+}
+
 function sortByTapNumber(items) {
   items.sort(function (a, b) {
     if (a.fields.tap > b.fields.tap) {
@@ -22,7 +30,6 @@ function sortByTapNumber(items) {
     if (a.fields.tap < b.fields.tap) {
       return -1;
     }
-    // a must be equal to b
     return 0;
   });
 };
@@ -34,6 +41,7 @@ client.getEntries({
   .then(function (entries) {
     // Log entry for each published entry
     entries.items.forEach(function (entry) {
+      if (entry.fields.abv) { formatAbv(entry); }
       context.taps.push(entry);
     })
     sortByTapNumber(context.taps);

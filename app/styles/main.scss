@@ -97,15 +97,21 @@ p {
         padding: 4em 3em 1em;
       }
 
-      &:before {
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
+      p {
+        position: relative;
+        z-index: 2;
       }
+    }
+
+    .abv {
+      color: $white;
+      bottom: -0.25em;
+      font-size: 15em;
+      left: 50%;
+      letter-spacing: -4px;
+      position: absolute;
+      transform: translateX(-50%);
+      z-index: 1;
     }
   }
 
