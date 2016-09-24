@@ -290,6 +290,21 @@ p {
       &.on-4 { span:nth-child(-n + 4) { background-image: url('../images/bean-on.svg'); }}
       &.on-5 { span:nth-child(-n + 5) { background-image: url('../images/bean-on.svg'); }}
     }
+
+     &.apple {
+
+      span {
+        background-image: url('../images/apple-off.svg');
+        background-size: 30px 30px;
+        height: 30px;
+      }
+
+      &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/apple-on.svg'); }}
+      &.on-2 { span:nth-child(-n + 2) { background-image: url('../images/apple-on.svg'); }}
+      &.on-3 { span:nth-child(-n + 3) { background-image: url('../images/apple-on.svg'); }}
+      &.on-4 { span:nth-child(-n + 4) { background-image: url('../images/apple-on.svg'); }}
+      &.on-5 { span:nth-child(-n + 5) { background-image: url('../images/apple-on.svg'); }}
+    }
   }
 }
 

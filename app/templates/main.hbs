@@ -40,6 +40,8 @@
           <span class="tap-number">{{fields.tap}}</span>
             {{#if coffee}}
               <h2>{{fields.coffeeName}}</h2>
+            {{else if cider}}
+              <h2>{{fields.ciderName}}</h2>
             {{else}}
               <h2>{{fields.beerName}}</h2>
             {{/if}}
@@ -60,6 +62,13 @@
             <div class="rating cf">
               <h4>Level:</h4>
               <div class="icons beans on-{{fields.level}}">
+                {{#times 5}} <span></span> {{/times}}
+              </div>
+            </div>
+          {{else if cider}}
+            <div class="rating cf">
+              <h4>Sweet:</h4>
+              <div class="icons apple on-{{fields.sweetness}}">
                 {{#times 5}} <span></span> {{/times}}
               </div>
             </div>
