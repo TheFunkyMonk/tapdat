@@ -111,7 +111,7 @@ p {
       }
     }
 
-    .abv {
+    .abv, .strength {
       color: $white;
       bottom: -0.25em;
       font-size: 15em;
@@ -122,6 +122,10 @@ p {
       text-indent: -10px;
       transform: translateX(-50%);
       z-index: 1;
+    }
+
+    .strength {
+      letter-spacing: -5px;
     }
   }
 
@@ -270,6 +274,21 @@ p {
       &.on-3 { span:nth-child(-n + 3) { background-image: url('../images/malt-on.svg'); }}
       &.on-4 { span:nth-child(-n + 4) { background-image: url('../images/malt-on.svg'); }}
       &.on-5 { span:nth-child(-n + 5) { background-image: url('../images/malt-on.svg'); }}
+    }
+
+    &.beans {
+
+      span {
+        background-image: url('../images/bean-off.svg');
+        background-size: 32px 32px;
+        height: 32px;
+      }
+
+      &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/bean-on.svg'); }}
+      &.on-2 { span:nth-child(-n + 2) { background-image: url('../images/bean-on.svg'); }}
+      &.on-3 { span:nth-child(-n + 3) { background-image: url('../images/bean-on.svg'); }}
+      &.on-4 { span:nth-child(-n + 4) { background-image: url('../images/bean-on.svg'); }}
+      &.on-5 { span:nth-child(-n + 5) { background-image: url('../images/bean-on.svg'); }}
     }
   }
 }

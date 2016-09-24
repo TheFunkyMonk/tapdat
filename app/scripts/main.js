@@ -38,6 +38,8 @@ client.getEntries({})
     entries.items.forEach(function (entry) {
       if (entry.fields.tap) {
         if (entry.fields.abv) { formatAbv(entry); }
+        if (entry.sys.contentType.sys.id === 'coffee') { entry.coffee = true; }
+        if (entry.sys.contentType.sys.id === 'cider') { entry.cider = true; }
         context.taps[entry.fields.tap - 1] = entry;
       }
     })

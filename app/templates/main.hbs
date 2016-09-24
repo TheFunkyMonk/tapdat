@@ -38,28 +38,45 @@
       <div class="details">
         <div class="title-card">
           <span class="tap-number">{{fields.tap}}</span>
-          <h2>{{fields.beerName}}</h2>
+            {{#if coffee}}
+              <h2>{{fields.coffeeName}}</h2>
+            {{else}}
+              <h2>{{fields.beerName}}</h2>
+            {{/if}}
           <h3>{{fields.breweryName}}</h3>
         </div>
         <h4 class="style">{{fields.style}}</h4>
         <div class="inner-content">
           <div class="description">
-            <span class="abv">{{fields.abv}}%</span>
+            {{#if coffee}}
+              <span class="strength">{{fields.strength}}</span>
+            {{else}}
+              <span class="abv">{{fields.abv}}%</span>
+            {{/if}}
             <h4 class="subtitle">{{fields.subtitle}}</h4>
             <p>{{fields.description}}</p>
           </div>
-          <div class="rating cf">
-            <h4>Hops:</h4>
-            <div class="icons hops on-{{fields.hoppiness}}">
-              {{#times 5}} <span></span> {{/times}}
+          {{#if coffee}}
+            <div class="rating cf">
+              <h4>Level:</h4>
+              <div class="icons beans on-{{fields.level}}">
+                {{#times 5}} <span></span> {{/times}}
+              </div>
             </div>
-          </div>
-          <div class="rating cf">
-            <h4>Malt:</h4>
-            <div class="icons malt on-{{fields.maltiness}}">
-              {{#times 5}} <span></span> {{/times}}
+          {{else}}
+            <div class="rating cf">
+              <h4>Hops:</h4>
+              <div class="icons hops on-{{fields.hoppiness}}">
+                {{#times 5}} <span></span> {{/times}}
+              </div>
             </div>
-          </div>
+            <div class="rating cf">
+              <h4>Malt:</h4>
+              <div class="icons malt on-{{fields.maltiness}}">
+                {{#times 5}} <span></span> {{/times}}
+              </div>
+            </div>
+          {{/if}}
           <div class="notes">
             <h4>Notes:</h4>
             <p>{{fields.tastingNotes}}</p>
