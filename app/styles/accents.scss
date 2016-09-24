@@ -1,5 +1,12 @@
 @import 'vars';
 
+.accentGray {
+
+  h2 { color: $dk-gray; }
+  .tap-number, .style { background: $dk-gray; }
+  .description { background: $gray-2; }
+}
+
 .accentBrown {
 
   h2 { color: $brown; }

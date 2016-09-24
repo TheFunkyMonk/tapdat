@@ -1,36 +1,71 @@
 {{#each taps}}
-  <div class="tap accent{{fields.accentColor}}">
-    <div class="hero" style="background-image: url('{{fields.imageLink}}')"></div>
-    <div class="details">
-      <div class="title-card">
-        <span class="tap-number">{{fields.tap}}</span>
-        <h2>{{fields.beerName}}</h2>
-        <h3>{{fields.breweryName}}</h3>
-      </div>
-      <h4 class="style">{{fields.style}}</h4>
-      <div class="inner-content">
-        <div class="description">
-          <span class="abv">{{fields.abv}}%</span>
-          <h4 class="subtitle">{{fields.subtitle}}</h4>
-          <p>{{fields.description}}</p>
+  {{#if empty}}
+    <div class="tap accentGray">
+      <div class="hero" style="background: linear-gradient(to bottom, #adadad 0%,#474747 100%)"></div>
+      <div class="details">
+        <div class="title-card">
+          <span class="tap-number">{{tap}}</span>
+          <h2>Nada</h2>
+          <h3>All Gone</h3>
         </div>
-        <div class="rating cf">
-          <h4>Hops:</h4>
-          <div class="icons hops on-{{fields.hoppiness}}">
-            {{#times 5}} <span></span> {{/times}}
+        <h4 class="style">Empty Tap</h4>
+        <div class="inner-content">
+          <div class="description">
+            <span class="abv">0.0%</span>
           </div>
-        </div>
-        <div class="rating cf">
-          <h4>Malt:</h4>
-          <div class="icons malt on-{{fields.maltiness}}">
-            {{#times 5}} <span></span> {{/times}}
+          <div class="rating cf">
+            <h4>Hops:</h4>
+            <div class="icons hops on-0">
+              {{#times 5}} <span></span> {{/times}}
+            </div>
           </div>
-        </div>
-        <div class="notes">
-          <h4>Notes:</h4>
-          <p>{{fields.tastingNotes}}</p>
+          <div class="rating cf">
+            <h4>Malt:</h4>
+            <div class="icons malt on-0">
+              {{#times 5}} <span></span> {{/times}}
+            </div>
+          </div>
+          <div class="notes">
+            <h4>Notes:</h4>
+            <p>Air</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {{else}}
+    <div class="tap accent{{fields.accentColor}}">
+      <div class="hero" style="background-image: url('{{fields.imageLink}}')"></div>
+      <div class="details">
+        <div class="title-card">
+          <span class="tap-number">{{fields.tap}}</span>
+          <h2>{{fields.beerName}}</h2>
+          <h3>{{fields.breweryName}}</h3>
+        </div>
+        <h4 class="style">{{fields.style}}</h4>
+        <div class="inner-content">
+          <div class="description">
+            <span class="abv">{{fields.abv}}%</span>
+            <h4 class="subtitle">{{fields.subtitle}}</h4>
+            <p>{{fields.description}}</p>
+          </div>
+          <div class="rating cf">
+            <h4>Hops:</h4>
+            <div class="icons hops on-{{fields.hoppiness}}">
+              {{#times 5}} <span></span> {{/times}}
+            </div>
+          </div>
+          <div class="rating cf">
+            <h4>Malt:</h4>
+            <div class="icons malt on-{{fields.maltiness}}">
+              {{#times 5}} <span></span> {{/times}}
+            </div>
+          </div>
+          <div class="notes">
+            <h4>Notes:</h4>
+            <p>{{fields.tastingNotes}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
 {{/each}}
