@@ -102,7 +102,6 @@ p {
         display: block;
         height: 100%;
         left: 0;
-        opacity: 0.05;
         position: absolute;
         top: 0;
         width: 100%;
@@ -153,6 +152,7 @@ p {
   left: calc(50% - 1em);
   line-height: 2;
   text-align: center;
+  text-indent: -1px;
   width: 1.75em;
   z-index: 1;
 }
@@ -168,6 +168,7 @@ p {
   text-align: center;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .subtitle {

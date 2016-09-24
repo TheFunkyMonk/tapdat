@@ -1,25 +1,50 @@
 @import 'vars';
 
+.accentBrown {
+
+  h2 { color: $brown; }
+  .tap-number, .style { background: $brown; }
+  .description { background: $brown-2; }
+}
+
 .accentRed {
 
   h2 { color: $red; }
-  .tap-number, .style, .description:before { background: $red; }
+  .tap-number, .style { background: $red; }
+  .description { background: $red-2; }
 }
 
 .accentBlue {
 
   h2 { color: $blue; }
-  .tap-number, .style, .description:before { background: $blue; }
+  .tap-number, .style { background: $blue; }
+  .description { background: $blue-2; }
 }
 
 .accentGreen {
 
   h2 { color: $green; }
-  .tap-number, .style, .description:before { background: $green; }
+  .tap-number, .style { background: $green; }
+  .description { background: $green-2; }
 }
 
 .accentOrange {
 
   h2 { color: $orange; }
-  .tap-number, .style, .description:before { background: $orange; }
+  .tap-number, .style { background: $orange; }
+  .description { background: $orange-2; }
+}
+
+.accentPurple {
+
+  h2 { color: $purple; }
+  .tap-number, .style { background: $purple; }
+  .description { background: $purple-2; }
+}
+
+.accentTeal {
+
+  h2 { color: $teal; }
+  .tap-number, .style { background: $teal; }
+  .description { background: $teal-2; }
 }
