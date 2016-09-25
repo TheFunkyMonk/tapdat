@@ -327,3 +327,33 @@ p {
 .notes {
   padding: 0 0 0 2em;
 }
+
+.github {
+  bottom: 1em;
+  position: fixed;
+  right: 1em;
+  opacity: 0;
+  transition: all 300ms ease;
+  transform: translateY(0.25em);
+  z-index: 999;
+
+  a {
+    display: block;
+    height: 1.5em;
+    width: 1.5em;
+
+    &:hover {
+      cursor: hand;
+    }
+  }
+
+  &.visible,
+  &:hover {
+    opacity: 0.5;
+    transform: translateY(0);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
