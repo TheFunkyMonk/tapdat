@@ -39,6 +39,7 @@ h1, h2, h3, h4, span, p {
 h1, h2, h3, h4, span {
   font-family: $bebas-neue;
   font-weight: $bold;
+  letter-spacing: 2px;
 }
 
 h2 {
@@ -50,7 +51,6 @@ h2 {
 
 h3, h4 {
   font-size: 1em;
-  letter-spacing: 1px;
 }
 
 h3 {
@@ -88,6 +88,7 @@ p {
     }
 
     .description {
+      border-right: 1px solid $white;
       font-style: italic;
       height: 29%;
       margin-bottom: 2em;
@@ -154,8 +155,9 @@ p {
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
+  border-right: 1px solid $dk-gray;
   height: 40vh;
-  width: 100%;
+  width: calc(100% - 1px);
 }
 
 .title-card {
@@ -192,15 +194,16 @@ p {
 
 .style {
   background: $orange;
+  border-right: 1px solid $lt-gray;
   color: $white;
-  font-size: 2em;
+  font-size: 1.8em;
   left: 0;
   margin: 0;
-  padding: 0.3em 0 0.1em;
+  padding: 0.4em 0 0.2em;
   position: absolute;
   text-align: center;
   top: 0;
-  width: 100%;
+  width: calc(100% - 1px);
   z-index: 2;
 }
 
