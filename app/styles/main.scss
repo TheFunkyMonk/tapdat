@@ -96,7 +96,9 @@ p {
       position: relative;
 
       @media (min-width: $xx-large) {
-        padding: 4em 3em 1em;
+        height: 28%;
+        padding: 4em 4em 1em;
+        margin-bottom: 2.5em;
       }
 
       h4, p {
@@ -105,16 +107,20 @@ p {
       }
 
       p {
-        font-size: 0.75em;
+        line-height: 1.75;
         font-weight: $semibold;
         line-height: 1.75;
+
+        @media (min-width: $xx-large) {
+          font-size: .8em;
+        }
       }
     }
 
     .abv, .strength {
       color: $white;
       bottom: -0.25em;
-      font-size: 15em;
+      font-size: 14em;
       font-style: normal;
       left: 50%;
       letter-spacing: -10px;
@@ -156,13 +162,13 @@ p {
   background: $white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  left: 5%;
+  left: 7%;
   padding: 0.75em 0 1em;
   position: absolute;
   text-align: center;
   top: 0;
   transform: translateY(-99%);
-  width: 90%;
+  width: 86%;
   white-space: nowrap;
 }
 
@@ -295,8 +301,8 @@ p {
 
       span {
         background-image: url('../images/apple-off.svg');
-        background-size: 30px 30px;
-        height: 30px;
+        background-size: 28px 28px;
+        height: 28px;
       }
 
       &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/apple-on.svg'); }}
@@ -325,7 +331,7 @@ p {
 
 .rating,
 .notes {
-  padding: 0 0 0 2em;
+  padding: 0 0 0 4em;
 }
 
 .github {
