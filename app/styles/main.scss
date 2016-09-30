@@ -2,6 +2,7 @@
 @import 'fonts';
 @import 'vars';
 @import 'accents';
+@import 'animations';
 
 .cf {
 
@@ -165,13 +166,21 @@ p {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   left: 7%;
-  padding: 0.75em 0 1em;
+  padding: 0.75em 0 2em;
   position: absolute;
   text-align: center;
   top: 0;
-  transform: translateY(-99%);
   width: 86%;
   white-space: nowrap;
+  transform:translateY(-89%);
+  animation: popup 20s infinite ease;
+}
+
+#content {
+  > .tap:nth-child(1) .title-card { animation-delay: 0; }
+  > .tap:nth-child(2) .title-card { animation-delay: 5s; }
+  > .tap:nth-child(3) .title-card { animation-delay: 10s; }
+  > .tap:nth-child(4) .title-card { animation-delay: 15s; }
 }
 
 .tap-number {
