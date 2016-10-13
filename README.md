@@ -1,7 +1,5 @@
 # tapdat
 
-> **Note:** tapdat is currently under active development, and not yet ready to use!
-
 ![](screenshot.png)
 
 ## Synopsis
