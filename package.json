@@ -43,5 +43,9 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "johnny-five": "^0.10.6",
+    "node-static": "^0.7.9"
   }
 }
