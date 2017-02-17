@@ -52,3 +52,15 @@ function renderView() {
   var mainContent = tapdat.templates.main(context);
   document.getElementById('content').innerHTML = mainContent;
 }
+
+var socket 	= io.connect('http://localhost:8080');
+socket.on('server event', function (data) {
+		console.log(data.text);
+
+		socket.emit('client event', { text: 'client side events are working' });
+	});
+
+socket.on('pour done', function (data) {
+    console.log('pour done');
+		console.log(data.text);
+	});
