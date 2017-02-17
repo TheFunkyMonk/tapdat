@@ -20,8 +20,7 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
 
-  var board = new five.Board(),
-      tilt;
+  var board = new five.Board();
 
   socket.emit('server event', { text: 'Socket.io works' });
 
@@ -38,15 +37,22 @@ io.sockets.on('connection', function (socket) {
       redLed = new five.Led(8),
       totalTimePoured = 0,
       pourStartTime = 0,
-      holdCalled = false;
+      holdCalled = false,
+      downCalled = false;
+
 
     board.repl.inject({
       button: tilt
     })
 
     tilt.on('down', function () {
+      if (downCalled) {
+        return;
+      }
+
       pourStartTime = new Date().getTime();
       holdCalled = false;
+      downCalled = true;
 
       console.log('START POURIN: ' + pourStartTime);
       greenLed.on()
@@ -66,6 +72,7 @@ io.sockets.on('connection', function (socket) {
       var endTime = new Date().getTime();
       var thisPourLength = (endTime - pourStartTime);
       pourStartTime = endTime;
+      downCalled = false;
 
       // 500 millisecond hysteresis to get rid of some sensor noise
       if (holdCalled && thisPourLength > 500) {
@@ -80,7 +87,7 @@ io.sockets.on('connection', function (socket) {
       holdCalled = false;
     })
 
-    tilt.on('exit', function () {
+    this.on('exit', function () {
       greenLed.off()
       redLed.off()
     })
@@ -92,9 +99,11 @@ io.sockets.on('connection', function (socket) {
     function addPourTimeToTotal(time) {
       totalTimePoured += time;
       // update UI
-      socket.emit('pour done', { text: totalTimePoured });
+      socket.emit('pour done', {
+        value: totalTimePoured
+      });
     }
 
-  });
+  })
 
 });

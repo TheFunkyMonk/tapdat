@@ -1,3 +1,5 @@
+var socket 	= io.connect('http://localhost:8080');
+
 var client = contentful.createClient({
   accessToken: myAccessToken,
   space: mySpaceId
@@ -7,7 +9,8 @@ var client = contentful.createClient({
 var tapCount = 4;
 
 var context = {
-  taps: []
+  taps: [],
+  pints: 0
 };
 
 Handlebars.registerHelper('times', function(n, block) {
@@ -53,14 +56,14 @@ function renderView() {
   document.getElementById('content').innerHTML = mainContent;
 }
 
-var socket 	= io.connect('http://localhost:8080');
-socket.on('server event', function (data) {
-		console.log(data.text);
-
-		socket.emit('client event', { text: 'client side events are working' });
-	});
-
 socket.on('pour done', function (data) {
-    console.log('pour done');
-		console.log(data.text);
+    console.log('received pour done');
+    var time = data.value / 1000,
+        pints = time * 0.098827933;
+
+    console.log('using round', Math.round(pints * 100) / 100);
+    console.log('not rounded ', pints);
+    context.pints = Math.round(pints * 100) / 100;
+    // context.pints = pints;
+    renderView();
 	});
