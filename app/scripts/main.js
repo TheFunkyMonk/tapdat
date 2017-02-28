@@ -1,4 +1,4 @@
-var socket 	= io.connect('http://localhost:8080');
+// var socket 	= io.connect('http://localhost:8080');
 
 var client = contentful.createClient({
   accessToken: myAccessToken,
@@ -12,6 +12,8 @@ var context = {
   taps: [],
   pints: 0
 };
+
+var taps
 
 Handlebars.registerHelper('times', function(n, block) {
   var accum = '';
@@ -47,6 +49,7 @@ client.getEntries({})
       }
     })
     console.table(context);
+    taps = context.taps;
     renderView();
   });
 
@@ -54,16 +57,17 @@ function renderView() {
   // Render Handlebars views
   var mainContent = tapdat.templates.main(context);
   document.getElementById('content').innerHTML = mainContent;
+  Animations.start(taps)
 }
 
-socket.on('pour done', function (data) {
-    console.log('received pour done');
-    var time = data.value / 1000,
-        pints = time * 0.098827933;
+// socket.on('pour done', function (data) {
+//     console.log('received pour done');
+//     var time = data.value / 1000,
+//         pints = time * 0.098827933;
 
-    console.log('using round', Math.round(pints * 100) / 100);
-    console.log('not rounded ', pints);
-    context.pints = Math.round(pints * 100) / 100;
-    // context.pints = pints;
-    renderView();
-	});
+//     console.log('using round', Math.round(pints * 100) / 100);
+//     console.log('not rounded ', pints);
+//     context.pints = Math.round(pints * 100) / 100;
+//     // context.pints = pints;
+//     renderView();
+// 	});
