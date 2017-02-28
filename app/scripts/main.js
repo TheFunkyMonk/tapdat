@@ -10,6 +10,8 @@ var context = {
   taps: []
 };
 
+var taps
+
 Handlebars.registerHelper('times', function(n, block) {
   var accum = '';
   for(var i = 0; i < n; i++) {
@@ -44,6 +46,7 @@ client.getEntries({})
       }
     })
     console.table(context);
+    taps = context.taps;
     renderView();
   });
 
@@ -51,4 +54,5 @@ function renderView() {
   // Render Handlebars views
   var mainContent = tapdat.templates.main(context);
   document.getElementById('content').innerHTML = mainContent;
+  Animations.start(taps)
 }
