@@ -1,5 +1,6 @@
 var Animations = (function(){
   var index             = 0
+    , loop_speed        = 4000
     , data              = null
     , tap_count         = null
     , tap_map           = []
@@ -47,12 +48,13 @@ var Animations = (function(){
 
   function loopy(){
     setInterval(function(){
-      set_index()
       var tap = tap_map[index]
       animate_title(tap)
       animate_tap(tap)
       animate_icons(tap)
-    }, 2000)
+      animate_bg(tap)
+      set_index()
+    }, loop_speed)
   }
 
   function set_index() {
@@ -73,28 +75,47 @@ var Animations = (function(){
     // coffee
     tap.node
       .find('.icons.beans > span:lt('+ tap.data.fields.level +')')
-      .velocity('callout.pulse', { stagger: 150, drag: true })
+      .velocity('callout.pulse', { stagger: 100, drag: true, delay: 1300 })
 
     // cider
     tap.node
       .find('.icons.apple > span:lt('+ tap.data.fields.sweetness +')')
-      .velocity('callout.pulse', { stagger: 150, drag: true })
+      .velocity('callout.pulse', { stagger: 100, drag: true, delay: 1300 })
 
-    // beer
+    // hops
     tap.node
       .find('.icons.hops > span:lt('+ tap.data.fields.hoppiness +')')
-      .velocity('callout.pulse', { stagger: 150, drag: true })
+      .velocity('callout.pulse', { stagger: 100, drag: true, delay: 1300 })
 
+    // malt
     tap.node
       .find('.icons.malt > span:lt('+ tap.data.fields.maltiness +')')
-      .velocity('callout.pulse', { stagger: 150, drag: true })
+      .velocity('callout.pulse', { stagger: 100, drag: true, delay: 1600 })
   }
 
   function animate_title(tap) {
+    // tap.node
+    //   .find('.title-card')
+    //   .find('h2, h3')
+    //   .velocity("transition.slideUpBigIn", { stagger: 20, drag: true })
     tap.node
       .find('.title-card')
-      .find('h2, h3')
-      .velocity("transition.slideUpIn", { stagger: 250, drag: true })
+      .velocity("transition.bounceUpIn", { stagger: 20, drag: true })
+  }
+
+  function animate_bg(tap) {
+    tap.node
+      .find('.hero')
+      .velocity({
+        scaleX: 1.03
+      , scaleY: 1.03
+      , easing: 'easeInSine'
+      }, {
+        duration: 4000
+      , complete: function(){
+          tap.node.find('.hero').velocity('reverse')
+        }
+      })
   }
 
   return {

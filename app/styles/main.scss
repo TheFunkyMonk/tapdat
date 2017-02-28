@@ -158,6 +158,7 @@ p {
   border-right: 1px solid $dk-gray;
   height: 40vh;
   width: calc(100% - 1px);
+  will-change: transform;
 }
 
 .title-card {
@@ -165,21 +166,12 @@ p {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   left: 7%;
-  padding: 0.75em 0 2em;
+  padding: 0.75em 0 5em;
   position: absolute;
   text-align: center;
-  top: 0;
+  top: -140px;
   width: 86%;
   white-space: nowrap;
-  transform:translateY(-89%);
-  animation: popup 20s infinite ease;
-}
-
-#content {
-  > .tap:nth-child(1) .title-card { animation-delay: 0; }
-  > .tap:nth-child(2) .title-card { animation-delay: 5s; }
-  > .tap:nth-child(3) .title-card { animation-delay: 10s; }
-  > .tap:nth-child(4) .title-card { animation-delay: 15s; }
 }
 
 .tap-number {
