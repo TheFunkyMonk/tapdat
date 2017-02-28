@@ -1,7 +1,5 @@
 # tapdat
 
-> **Note:** tapdat is currently under active development, and not yet ready to use!
-
 ![](screenshot.png)
 
 ## Synopsis
@@ -22,7 +20,8 @@ Periodic builds will be deployed to [tapdat.rjlacount.com](http://tapdat.rjlacou
 
 ### Contentful
 
-* Coming soon
+* Create a [Contentful](https://www.contentful.com) account and empty space
+* Example content for tapdat is in [resources/contentful-export.json](resources/contentful-export.json) and can be imported using the [Contentful importer](https://www.contentful.com/developers/docs/tutorials/general/import-and-export/#importing-content)
 
 ### Configuration
 
