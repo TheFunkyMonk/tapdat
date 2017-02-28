@@ -1,4 +1,4 @@
-var socket 	= io.connect('http://localhost:8080');
+// var socket 	= io.connect('http://localhost:8080');
 
 var client = contentful.createClient({
   accessToken: myAccessToken,
@@ -60,14 +60,14 @@ function renderView() {
   Animations.start(taps)
 }
 
-socket.on('pour done', function (data) {
-    console.log('received pour done');
-    var time = data.value / 1000,
-        pints = time * 0.098827933;
+// socket.on('pour done', function (data) {
+//     console.log('received pour done');
+//     var time = data.value / 1000,
+//         pints = time * 0.098827933;
 
-    console.log('using round', Math.round(pints * 100) / 100);
-    console.log('not rounded ', pints);
-    context.pints = Math.round(pints * 100) / 100;
-    // context.pints = pints;
-    renderView();
-	});
+//     console.log('using round', Math.round(pints * 100) / 100);
+//     console.log('not rounded ', pints);
+//     context.pints = Math.round(pints * 100) / 100;
+//     // context.pints = pints;
+//     renderView();
+// 	});
