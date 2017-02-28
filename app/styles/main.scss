@@ -120,14 +120,15 @@ p {
 
     .abv, .strength {
       color: $white;
-      bottom: -0.25em;
+      bottom: -0.26em;
       font-size: 14em;
       font-style: normal;
-      left: 50%;
+      left: 0;
       letter-spacing: -10px;
       position: absolute;
       text-indent: -10px;
-      transform: translateX(-50%);
+      width: 100%;
+      text-align: center;
       z-index: 1;
     }
 
@@ -251,6 +252,7 @@ p {
       height: 25px;
       margin-right: 8%;
       width: 25px;
+      will-change: transform;
 
       @media (min-width: $small) {
         margin-right: 5%;

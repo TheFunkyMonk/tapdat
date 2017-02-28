@@ -62,11 +62,17 @@ var Animations = (function(){
   }
 
   function animate_coffee(tap) {
-
+    tap.node
+      .find('.description > span')
+      .velocity('callout.pulse', { stagger: 100, drag: true })
   }
 
   function animate_tap(tap) {
-    if (!tap.countup) return
+    if (!tap.countup) {
+      if (tap.data.coffee) animate_coffee(tap)
+      return
+    }
+
     tap.countup.reset()
     tap.countup.start()
   }
@@ -94,13 +100,18 @@ var Animations = (function(){
   }
 
   function animate_title(tap) {
-    // tap.node
-    //   .find('.title-card')
-    //   .find('h2, h3')
-    //   .velocity("transition.slideUpBigIn", { stagger: 20, drag: true })
     tap.node
       .find('.title-card')
-      .velocity("transition.bounceUpIn", { stagger: 20, drag: true })
+      .velocity({
+        translateY: ['-15%', [500, 20]]
+      }, {
+        duration: 1000,
+        complete: function() {
+          setTimeout(function(){
+            tap.node.find('.title-card').velocity('reverse')
+          }, 2000)
+        }
+      })
   }
 
   function animate_bg(tap) {
