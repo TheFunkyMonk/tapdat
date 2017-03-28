@@ -4,9 +4,6 @@ var Animations = (function(){
     , data              = null
     , tap_count         = null
     , tap_map           = []
-    , count_up_options  = {
-        suffix: '%'
-      }
 
   function start(contentful_data) {
     data = contentful_data
@@ -22,27 +19,11 @@ var Animations = (function(){
 
     // for each tap datum
     data.forEach(function(data, i){
-      // coffee item
-      if (!data.fields.abv) {
-        return tap_map[i] = {
+
+      return tap_map[i] = {
           node: $(nodes[i])
         , data: data
         }
-      }
-
-      // tap item
-      tap_map[i] = {
-        node:     $(nodes[i])
-      , data:     data
-      , countup:  new CountUp(
-          $(nodes[i]).find('.abv')[0]
-          , 0
-          , data.fields.abv
-          , 1
-          , 2
-          , count_up_options
-        )
-      }
     })
   }
 
@@ -61,20 +42,10 @@ var Animations = (function(){
     index = index == tap_count - 1 ? 0 : index + 1
   }
 
-  function animate_coffee(tap) {
+  function animate_tap(tap) {
     tap.node
       .find('.description > span')
       .velocity('callout.pulse', { stagger: 100, drag: true })
-  }
-
-  function animate_tap(tap) {
-    if (!tap.countup) {
-      if (tap.data.coffee) animate_coffee(tap)
-      return
-    }
-
-    tap.countup.reset()
-    tap.countup.start()
   }
 
   function animate_icons(tap) {
