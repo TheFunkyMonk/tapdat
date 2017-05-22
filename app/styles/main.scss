@@ -63,19 +63,24 @@ p {
   margin-bottom: 2em;
 }
 
+.flex-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .tap {
   box-sizing: border-box;
-  float: left;
   height: 100vh;
   overflow: hidden;
-  width: 100%;
+  flex: 1 0 0;
+  flex-basis: 100%;
 
   @media (min-width: $small) {
-    width: 50%;
+    flex-basis: 50%;
   }
 
   @media (min-width: $x-large) {
-    width: 25%;
+    flex-basis: 25%;
   }
 
   .details {
@@ -240,23 +245,23 @@ p {
   }
 
   .icons {
-    display: block;
+    align-items: flex-start;
+    display: flex;
     float: right;
     width: 75%;
 
-
     span {
-      background-position: center 0;
+      background-position: 0 0;
       background-repeat: no-repeat;
       background-size: 25px 25px;
       display: inline-block;
+      flex: 1 0 0;
       height: 25px;
-      margin-right: 8%;
       width: 25px;
       will-change: transform;
 
-      @media (min-width: $small) {
-        margin-right: 5%;
+      &:last-child {
+        margin-right: 2em;
       }
     }
 
@@ -264,6 +269,7 @@ p {
 
       span {
         background-image: url('../images/hop-off.svg');
+        background-position: 4px 0;
       }
 
       &.on-1 { span:nth-child(-n + 1) { background-image: url('../images/hop-on.svg'); }}
