@@ -32,7 +32,8 @@ var Animations = (function(){
       var tap = tap_map[index]
       animate_title(tap)
       animate_tap(tap)
-      animate_icons(tap)
+      if (!tap.data.empty)
+        animate_icons(tap)
       animate_bg(tap)
       set_index()
     }, loop_speed)
