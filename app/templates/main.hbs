@@ -2,100 +2,106 @@
   <p>Total Pints Poured: {{pints}}</p>
 </div>--}}
 
-{{#each taps}}
-  {{#if empty}}
-    <div class="tap accentGray">
-      <div class="hero" style="background: linear-gradient(to bottom, #adadad 0%,#474747 100%)"></div>
-      <div class="details">
-        <div class="title-card">
-          <span class="tap-number">{{tap}}</span>
-          <h2>Nada</h2>
-          <h3>All Gone</h3>
-        </div>
-        <h4 class="style">Empty Tap</h4>
-        <div class="inner-content">
-          <div class="description">
-            <span class="abv">0.0%</span>
+<div class="taps count-{{taps.length}} {{#if images}}images{{/if}}">
+  {{#each taps}}
+    {{#if empty}}
+      <div class="tap accentGray">
+        <div class="hero no-image"></div>
+        <div class="details">
+          <div class="title-card">
+            <span class="tap-number">{{tap}}</span>
+            <h2>Nada</h2>
+            <h3>All Gone</h3>
           </div>
-          <div class="rating cf">
-            <h4>Hops:</h4>
-            <div class="icons hops on-0">
-              {{#times 5}} <span></span> {{/times}}
+          <h4 class="style">Empty Tap</h4>
+          <div class="inner-content">
+            <div class="description">
+              <span class="abv">0.0%</span>
             </div>
-          </div>
-          <div class="rating cf">
-            <h4>Malt:</h4>
-            <div class="icons malt on-0">
-              {{#times 5}} <span></span> {{/times}}
-            </div>
-          </div>
-          <div class="notes">
-            <h4>Notes:</h4>
-            <p>Air</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  {{else}}
-    <div class="tap accent{{fields.accentColor}}">
-      <div class="hero" style="background-image: url('{{fields.imageLink}}')"></div>
-      <div class="details">
-        <div class="title-card">
-          <span class="tap-number">{{fields.tap}}</span>
-            {{#if coffee}}
-              <h2>{{fields.coffeeName}}</h2>
-            {{else if cider}}
-              <h2>{{fields.ciderName}}</h2>
-            {{else}}
-              <h2>{{fields.beerName}}</h2>
-            {{/if}}
-          <h3>{{fields.breweryName}}</h3>
-        </div>
-        <h4 class="style">{{fields.style}}</h4>
-        <div class="inner-content">
-          <div class="description">
-            {{#if coffee}}
-              <span class="strength">{{fields.strength}}</span>
-            {{else}}
-              <span class="abv">{{fields.abv}}%</span>
-            {{/if}}
-            <h4 class="subtitle">{{fields.subtitle}}</h4>
-            <p>{{fields.description}}</p>
-          </div>
-          {{#if coffee}}
-            <div class="rating cf">
-              <h4>Level:</h4>
-              <div class="icons beans on-{{fields.level}}">
-                {{#times 5}} <span></span> {{/times}}
-              </div>
-            </div>
-          {{else if cider}}
-            <div class="rating cf">
-              <h4>Sweet:</h4>
-              <div class="icons apple on-{{fields.sweetness}}">
-                {{#times 5}} <span></span> {{/times}}
-              </div>
-            </div>
-          {{else}}
             <div class="rating cf">
               <h4>Hops:</h4>
-              <div class="icons hops on-{{fields.hoppiness}}">
+              <div class="icons hops on-0">
                 {{#times 5}} <span></span> {{/times}}
               </div>
             </div>
             <div class="rating cf">
               <h4>Malt:</h4>
-              <div class="icons malt on-{{fields.maltiness}}">
+              <div class="icons malt on-0">
                 {{#times 5}} <span></span> {{/times}}
               </div>
             </div>
-          {{/if}}
-          <div class="notes">
-            <h4>Notes:</h4>
-            <p>{{fields.tastingNotes}}</p>
+            <div class="notes">
+              <h4>Notes:</h4>
+              <p>Air</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  {{/if}}
-{{/each}}
+    {{else}}
+      <div class="tap accent{{fields.accentColor}}">
+        {{#if fields.imageLink}}
+          <div class="hero" style="background-image: url('{{fields.imageLink}}')"></div>
+        {{else}}
+          <div class="hero no-image"></div>
+        {{/if}}
+        <div class="details">
+          <div class="title-card">
+            <span class="tap-number">{{fields.tap}}</span>
+              {{#if coffee}}
+                <h2>{{fields.coffeeName}}</h2>
+              {{else if cider}}
+                <h2>{{fields.ciderName}}</h2>
+              {{else}}
+                <h2>{{fields.beerName}}</h2>
+              {{/if}}
+            <h3>{{fields.breweryName}}</h3>
+          </div>
+          <h4 class="style">{{fields.style}}</h4>
+          <div class="inner-content">
+            <div class="description">
+              {{#if coffee}}
+                <span class="strength">{{fields.strength}}</span>
+              {{else}}
+                <span class="abv">{{fields.abv}}%</span>
+              {{/if}}
+              <h4 class="subtitle">{{fields.subtitle}}</h4>
+              <p>{{fields.description}}</p>
+            </div>
+            {{#if coffee}}
+              <div class="rating cf">
+                <h4>Level:</h4>
+                <div class="icons beans on-{{fields.level}}">
+                  {{#times 5}} <span></span> {{/times}}
+                </div>
+              </div>
+            {{else if cider}}
+              <div class="rating cf">
+                <h4>Sweet:</h4>
+                <div class="icons apple on-{{fields.sweetness}}">
+                  {{#times 5}} <span></span> {{/times}}
+                </div>
+              </div>
+            {{else}}
+              <div class="rating cf">
+                <h4>Hops:</h4>
+                <div class="icons hops on-{{fields.hoppiness}}">
+                  {{#times 5}} <span></span> {{/times}}
+                </div>
+              </div>
+              <div class="rating cf">
+                <h4>Malt:</h4>
+                <div class="icons malt on-{{fields.maltiness}}">
+                  {{#times 5}} <span></span> {{/times}}
+                </div>
+              </div>
+            {{/if}}
+            <div class="notes">
+              <h4>Notes:</h4>
+              <p>{{fields.tastingNotes}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+  {{/each}}
+</div>

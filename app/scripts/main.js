@@ -5,15 +5,13 @@ var client = contentful.createClient({
   space: mySpaceId
 })
 
-// Set number of taps here
-var tapCount = 4;
-
 var context = {
   taps: [],
-  pints: 0
+  pints: 0,
+  images: false
 };
 
-var taps
+var taps;
 
 Handlebars.registerHelper('times', function(n, block) {
   var accum = '';
@@ -29,7 +27,7 @@ function formatAbv(entry) {
   } else {
     entry.fields.abv = Math.round(entry.fields.abv);
   }
-}
+};
 
 function buildEmptyTaps(n) {
   for (var i = 0; i < n; i++) {
@@ -42,6 +40,7 @@ client.getEntries({})
     buildEmptyTaps(tapCount);
     entries.items.forEach(function (entry) {
       if (entry.fields.tap) {
+        if (entry.fields.imageLink) { context.images = true; }
         if (entry.fields.abv) { formatAbv(entry); }
         if (entry.sys.contentType.sys.id === 'coffee') { entry.coffee = true; }
         if (entry.sys.contentType.sys.id === 'cider') { entry.cider = true; }
@@ -57,8 +56,8 @@ function renderView() {
   // Render Handlebars views
   var mainContent = tapdat.templates.main(context);
   document.getElementById('content').innerHTML = mainContent;
-  Animations.start(taps)
-}
+  Animations.start(taps);
+};
 
 // socket.on('pour done', function (data) {
 //     console.log('received pour done');

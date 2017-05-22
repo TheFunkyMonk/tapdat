@@ -5,6 +5,7 @@
   h2 { color: $dk-gray; }
   .tap-number, .style { background: $dk-gray; }
   .description { background: $gray-2; }
+  .no-image { background: linear-gradient(to bottom, #adadad 0%,#474747 100%); }
 }
 
 .accentBrown {
@@ -12,6 +13,7 @@
   h2 { color: $brown; }
   .tap-number, .style { background: $brown; }
   .description { background: $brown-2; }
+  .no-image { background: linear-gradient(to bottom, $brown-2 0%, $brown 100%); }
 }
 
 .accentRed {
@@ -19,6 +21,7 @@
   h2 { color: $red; }
   .tap-number, .style { background: $red; }
   .description { background: $red-2; }
+  .no-image { background: linear-gradient(to bottom, $red-2 0%, $red 100%); }
 }
 
 .accentBlue {
@@ -26,6 +29,7 @@
   h2 { color: $blue; }
   .tap-number, .style { background: $blue; }
   .description { background: $blue-2; }
+  .no-image { background: linear-gradient(to bottom, $blue-2 0%, $blue 100%); }
 }
 
 .accentGreen {
@@ -33,6 +37,7 @@
   h2 { color: $green; }
   .tap-number, .style { background: $green; }
   .description { background: $green-2; }
+  .no-image { background: linear-gradient(to bottom, $green-2 0%, $green 100%); }
 }
 
 .accentOrange {
@@ -40,6 +45,7 @@
   h2 { color: $orange; }
   .tap-number, .style { background: $orange; }
   .description { background: $orange-2; }
+  .no-image { background: linear-gradient(to bottom, $orange-2 0%, $orange 100%); }
 }
 
 .accentPurple {
@@ -47,6 +53,7 @@
   h2 { color: $purple; }
   .tap-number, .style { background: $purple; }
   .description { background: $purple-2; }
+  .no-image { background: linear-gradient(to bottom, $purple-2 0%, $purple 100%); }
 }
 
 .accentTeal {
@@ -54,4 +61,5 @@
   h2 { color: $teal; }
   .tap-number, .style { background: $teal; }
   .description { background: $teal-2; }
+  .no-image { background: linear-gradient(to bottom, $teal-2 0%, $teal 100%); }
 }

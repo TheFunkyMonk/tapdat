@@ -25,12 +25,13 @@ Periodic builds will be deployed to [tapdat.rjlacount.com](http://tapdat.rjlacou
 
 ### Configuration
 
-* In order to keep API keys private, you'll need to create your own `config.js` that includes vars for your Contentful Access Token / Space ID. This file is not tracked.
+* Before running the app, you'll need to create your own `config.js` including your Contentful Access Token, Space ID, and number of taps in your setup. This file is not tracked, to keep API keys private.
 
 `app/scripts/config.js`
 ```language-javascript
 var myAccessToken = 'your-token',
-    mySpaceId = 'your-space-id';
+    mySpaceId = 'your-space-id',
+    tapCount = 4;
 ```
 
 ### Running the app

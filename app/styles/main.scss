@@ -63,9 +63,51 @@ p {
   margin-bottom: 2em;
 }
 
-.flex-wrap {
+.taps {
   display: flex;
   flex-flow: row wrap;
+
+  &.images {
+
+    .title-card {
+      padding: 0.75em 0 5em;
+      top: -140px;
+    }
+
+    .hero {
+      height: 40vh;
+    }
+
+    .tap .details .description {
+      height: 29%;
+
+      @media (min-width: $xx-large) {
+        height: 28%;
+      }
+    }
+  }
+
+  &.count-3 {
+
+    @media (min-width: $xx-large) {
+
+      .tap .details .abv,
+      .tap .details .strength {
+        font-size: 16em;
+        bottom: -0.28em;
+      }
+
+      .style {
+        padding: 0.6em 0 0.4em;
+      }
+
+      .tap .details .description {
+        height: 39%;
+        padding: 6em 4em 0;
+      }
+    }
+
+  }
 }
 
 .tap {
@@ -102,7 +144,7 @@ p {
       position: relative;
 
       @media (min-width: $xx-large) {
-        height: 28%;
+        height: 42%;
         padding: 4em 4em 1em;
         margin-bottom: 2.5em;
       }
@@ -163,7 +205,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   border-right: 1px solid $dk-gray;
-  height: 40vh;
+  height: 28vh;
   width: calc(100% - 1px);
   will-change: transform;
 }
@@ -179,6 +221,11 @@ p {
   top: -140px;
   width: 86%;
   white-space: nowrap;
+
+  @media (min-width: $xx-large) {
+    padding: 1.75em 0 6em;
+    top: -180px;
+  }
 }
 
 .tap-number {
@@ -202,6 +249,7 @@ p {
 .style {
   background: $orange;
   border-right: 1px solid $lt-gray;
+  box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.25);
   color: $white;
   font-size: 1.8em;
   left: 0;
