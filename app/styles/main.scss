@@ -83,6 +83,10 @@ p {
 
       @media (min-width: $xx-large) {
         height: 28%;
+
+        p {
+          font-size: 0.8em;
+        }
       }
     }
   }
@@ -91,9 +95,13 @@ p {
 
     @media (min-width: $xx-large) {
 
+      .hero {
+        height: 31vh;
+      }
+
       .tap .details .abv,
       .tap .details .strength {
-        font-size: 16em;
+        font-size: 18em;
         bottom: -0.28em;
       }
 
@@ -102,8 +110,24 @@ p {
       }
 
       .tap .details .description {
-        height: 39%;
-        padding: 6em 4em 0;
+        height: 38%;
+        padding: 6em 3em 0;
+
+        p {
+          font-size: 0.8em;
+        }
+      }
+
+      .rating, .notes {
+        padding: 0 0 0 3em;
+      }
+
+      .rating .icons span:last-child {
+        margin-right: 0;
+      }
+
+      .notes p {
+        width: 74%;
       }
     }
 
@@ -160,7 +184,7 @@ p {
         line-height: 1.75;
 
         @media (min-width: $xx-large) {
-          font-size: .8em;
+          font-size: 1em;
         }
       }
     }

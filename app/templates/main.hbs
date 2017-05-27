@@ -83,21 +83,34 @@
               </div>
             {{else}}
               <div class="rating cf">
-                <h4>Hops:</h4>
+                {{#if fields.details}}
+                  <h4>Hop Level:</h4>
+                {{else}}
+                  <h4>Hops:</h4>
+                {{/if}}
                 <div class="icons hops on-{{fields.hoppiness}}">
                   {{#times 5}} <span></span> {{/times}}
                 </div>
               </div>
               <div class="rating cf">
-                <h4>Malt:</h4>
+                {{#if fields.details}}
+                  <h4>Malt Level:</h4>
+                {{else}}
+                  <h4>Malt:</h4>
+                {{/if}}
                 <div class="icons malt on-{{fields.maltiness}}">
                   {{#times 5}} <span></span> {{/times}}
                 </div>
               </div>
             {{/if}}
             <div class="notes">
-              <h4>Notes:</h4>
-              <p>{{fields.tastingNotes}}</p>
+              {{#if fields.tastingNotes}}
+                <h4>Notes:</h4>
+                <p>{{fields.tastingNotes}}</p>
+              {{else if fields.details}}
+                <h4>Deets:</h4>
+                <p>{{fields.details}}</p>
+              {{/if}}
             </div>
           </div>
         </div>
