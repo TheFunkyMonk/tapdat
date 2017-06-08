@@ -11,7 +11,7 @@ var server = require('http').createServer(function (request, response) {
     file.serve(request, response);
   }).resume();
 });
-server.listen(8080);
+server.listen(process.env.PORT || 8080);
 
 //
 // Socket.io
